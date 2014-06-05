@@ -4,7 +4,7 @@
   <title><![CDATA[明心见性]]></title>
   <link href="http://yunweiguya.github.io/atom.xml" rel="self"/>
   <link href="http://yunweiguya.github.io/"/>
-  <updated>2014-06-05T08:31:54+08:00</updated>
+  <updated>2014-06-05T09:03:57+08:00</updated>
   <id>http://yunweiguya.github.io/</id>
   <author>
     <name><![CDATA[云谷]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[技能树]]></title>
+    <link href="http://yunweiguya.github.io/blog/2014/06/05/ji-neng-shu/"/>
+    <updated>2014-06-05T08:47:07+08:00</updated>
+    <id>http://yunweiguya.github.io/blog/2014/06/05/ji-neng-shu</id>
+    <content type="html"><![CDATA[<p>写于2014年03月，发布删改。</p>
+
+<h3>1 现有的技能树</h3>
+
+<ul>
+<li>php。</li>
+<li>ruby。之前工作写rails应用，学到不少有趣的思想，乐趣所在。</li>
+<li>js。曾经很迷这个。</li>
+<li>c。最早写过BCM代码(芯片，汇编和c)，然后通信、城轨、空管里都碰了个面(unix系c)。</li>
+<li>c++。这东西玩法太深了，写过点mfc、qt，止步于muduo。基于一些考虑，不打算接触了。</li>
+</ul>
+
+
+<h3>2 之前的一些计划</h3>
+
+<ul>
+<li>在学java/spring，学习思想，为了写好php。写出让自己满意的php js代码，修炼内功。</li>
+<li>好好学下lua，配合php用。</li>
+<li>慢慢提升c内功，毕竟php ruby等都是c系的~。认真研究下redis，然后nginx。</li>
+<li>一直很想学下backbone.js，看看怎么更好的组织js，不要变成一坨~。</li>
+<li>提升对PD的认知。</li>
+</ul>
+
+
+<h3>3 现在的调整</h3>
+
+<ul>
+<li>主攻java。 dubbo、metaQ。 任何语言都有适合的地方。</li>
+<li>鉴于精力，php java ruby 不玩其他生态了。</li>
+<li>swift也许不错。</li>
+</ul>
+
+
+<h3>4 另外一些其它方面的计划</h3>
+
+<ul>
+<li>多外出走走，亲近自然，坚持锻炼身体。</li>
+<li>考虑村上春树工作法。</li>
+<li>练字。</li>
+<li>学点经济学。</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[BigPipe初探]]></title>
