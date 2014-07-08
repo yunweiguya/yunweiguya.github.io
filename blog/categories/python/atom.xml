@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: python | 明心见性]]></title>
+  <link href="http://yunweiguya.github.io/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://yunweiguya.github.io/"/>
+  <updated>2014-07-08T18:22:01+08:00</updated>
+  <id>http://yunweiguya.github.io/</id>
+  <author>
+    <name><![CDATA[云谷]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[sprint回顾]]></title>
+    <link href="http://yunweiguya.github.io/blog/2014/07/08/sprinthui-gu/"/>
+    <updated>2014-07-08T16:57:32+08:00</updated>
+    <id>http://yunweiguya.github.io/blog/2014/07/08/sprinthui-gu</id>
+    <content type="html"><![CDATA[<h3>1</h3>
+
+<p>2014年06月24日 ~ 2014年07月04日，3个哥们一起组成兴趣小队折腾了下爬虫平台，算作1个sprint。涉及scrapy、tornado和py一些基础组件redis-py、pika、gearman、apscheduler、dbutils等。业务解决定时爬取、实时爬取、队列消费爬取，比较有意思的是vps服务模块。</p>
+
+<p>兴趣是最好的老师，A君周末搞定py语法，然后研究scrapy，搞vps模块；B君果断扔掉sqlalchemy，写了个orm &lt;= 之前我们用的torndb+dbutils。大家分享、交流很积极充分，难忘的协作经历~。web这块不喜欢twisted(scrapy基于这玩意)，用了tornado &lt;= 后来扫尾玩了下flask，完备很多(当然没有异步io)，但仍感觉web范式不出rails。</p>
+
+<h3>2</h3>
+
+<p>py生态完备，写点后台小脚本挺不错的。现在前台web基本玩php，不写rails了~，不过gevent/eventmachine可以一起玩下。go暂时应该是没有场景用到。</p>
+
+<h3>3</h3>
+
+<p>后面打算写点java，研究netty和dubbo(&lt;= 有了面包、空气和水plan基础理解上应该还好)，应对服务化。</p>
+]]></content>
+  </entry>
+  
+</feed>
