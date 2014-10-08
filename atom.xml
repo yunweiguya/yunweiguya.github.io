@@ -4,7 +4,7 @@
   <title><![CDATA[明心见性]]></title>
   <link href="http://yunweiguya.github.io/atom.xml" rel="self"/>
   <link href="http://yunweiguya.github.io/"/>
-  <updated>2014-08-26T22:33:39+08:00</updated>
+  <updated>2014-10-08T22:40:12+08:00</updated>
   <id>http://yunweiguya.github.io/</id>
   <author>
     <name><![CDATA[云谷]]></name>
@@ -12,6 +12,94 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[OpenCart源码浅析2014-10-08]]></title>
+    <link href="http://yunweiguya.github.io/blog/2014/10/08/opencartyuan-ma-qian-xi-2014-10-08/"/>
+    <updated>2014-10-08T22:38:55+08:00</updated>
+    <id>http://yunweiguya.github.io/blog/2014/10/08/opencartyuan-ma-qian-xi-2014-10-08</id>
+    <content type="html"><![CDATA[<h1>更新log</h1>
+
+<pre><code>1. 2014-10-08 index.php
+</code></pre>
+
+<h1>初衷</h1>
+
+<pre><code>想看看社区迭代过的商城各模块是如何设计的，并给团队做分享。
+</code></pre>
+
+<h1>upload/index.php</h1>
+
+<h5>upload/system/startup.php 主要做两件事情：</h5>
+
+<pre><code>1. spl_autoload_register('autoload'); 来加载library/下的类。
+2. 加载Engine(action、controller、event、front、loader、model、registry)和Helper。
+</code></pre>
+
+<h5>Engine</h5>
+
+<pre><code>1. Registry 注册表模式，全局k-v数组。
+2. Action 根据$route找到文件，通过call_user_func_array调用upload/catalog/controller/下相应controller的action。
+3. Loader 手动加载model、view、library、helper。
+4. Event 保留一堆Actions来trigger。
+5. Front dispatch分发器。addPreAction添加前置处理。dispatch链式执行。
+</code></pre>
+
+<h5>Config 全局配置array</h5>
+
+<pre><code>利用autoload加载library/config.php类，存setting表中k-v。
+</code></pre>
+
+<h5>其它</h5>
+
+<pre><code>1. error_handler和超简单Log。
+2. Request，递归参数过滤一堆php变量:$_GET $_POST $_REQUEST $_COOKIE $_FILES $_SERVER。
+3. Response，HTTP头操作，《HTTP权威》要再细看。
+4. Cache分为APC、File、Memcache 3种，文件实现简单干净。
+5. language表匹配HTTP头语言。
+6. tracking参数更新marketing表中clicks。
+7. Encryption 加密工具类。
+</code></pre>
+
+<h5>Document</h5>
+
+<h1>业务实体</h1>
+
+<pre><code>全部db操作、表大量text字段应对较大流量值得商榷。
+</code></pre>
+
+<h5>Customer</h5>
+
+<h5>Affiliate 联盟营销Affiliate Marketing</h5>
+
+<h5>Cart 购物车*****</h5>
+
+<h5>Tax</h5>
+
+<h5>Product 商品 ******</h5>
+
+<h5>Category 类目 ******</h5>
+
+<h5>Coupon 促销 ******</h5>
+
+<h5>Voucher 礼品劵 ***</h5>
+
+<h5>Order 订单 ******</h5>
+
+<h5>度量单位</h5>
+
+<pre><code>1. Currency和currency表
+2. Weight和 weight_class、weight_class_description表
+3. Length
+</code></pre>
+
+<h3>TODO</h3>
+
+<pre><code>1.redis cache加入(Predis)。
+2. ...
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[不轻贱自己]]></title>

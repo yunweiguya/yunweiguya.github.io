@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>世界杯 - 明心见性</title>
+  <title>OpenCart源码浅析2014-10-08 - 明心见性</title>
   <meta name="author" content="云谷">
 
   
-  <meta name="description" content="世界杯开赛了，弄py的分布式爬虫，番茄钟期间看youku【世界杯集锦】也挺不错:)
-">
+  <meta name="description" content="更新log 1. 2014-10-08 index.php 初衷 想看看社区迭代过的商城各模块是如何设计的，并给团队做分享。 upload/index.php upload/system/startup.php 主要做两件事情： 1. spl_autoload_register('autoload &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yunweiguya.github.io/blog/2014/06/15/shi-jie-bei/">
+  <link rel="canonical" href="http://yunweiguya.github.io/blog/2014/10/08/opencartyuan-ma-qian-xi-2014-10-08/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -68,7 +67,7 @@
   
   <header>
     
-      <h1 class="entry-title">世界杯</h1>
+      <h1 class="entry-title">OpenCart源码浅析2014-10-08</h1>
     
     
       <p class="meta">
@@ -84,14 +83,93 @@
   
 
 
-<time datetime="2014-06-15T10:04:02+08:00" pubdate data-updated="true">Jun 15<span>th</span>, 2014</time>
+<time datetime="2014-10-08T22:38:55+08:00" pubdate data-updated="true">Oct 8<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>世界杯开赛了，弄py的分布式爬虫，番茄钟期间看youku【世界杯集锦】也挺不错:)</p>
+<div class="entry-content"><h1>更新log</h1>
+
+<pre><code>1. 2014-10-08 index.php
+</code></pre>
+
+<h1>初衷</h1>
+
+<pre><code>想看看社区迭代过的商城各模块是如何设计的，并给团队做分享。
+</code></pre>
+
+<h1>upload/index.php</h1>
+
+<h5>upload/system/startup.php 主要做两件事情：</h5>
+
+<pre><code>1. spl_autoload_register('autoload'); 来加载library/下的类。
+2. 加载Engine(action、controller、event、front、loader、model、registry)和Helper。
+</code></pre>
+
+<h5>Engine</h5>
+
+<pre><code>1. Registry 注册表模式，全局k-v数组。
+2. Action 根据$route找到文件，通过call_user_func_array调用upload/catalog/controller/下相应controller的action。
+3. Loader 手动加载model、view、library、helper。
+4. Event 保留一堆Actions来trigger。
+5. Front dispatch分发器。addPreAction添加前置处理。dispatch链式执行。
+</code></pre>
+
+<h5>Config 全局配置array</h5>
+
+<pre><code>利用autoload加载library/config.php类，存setting表中k-v。
+</code></pre>
+
+<h5>其它</h5>
+
+<pre><code>1. error_handler和超简单Log。
+2. Request，递归参数过滤一堆php变量:$_GET $_POST $_REQUEST $_COOKIE $_FILES $_SERVER。
+3. Response，HTTP头操作，《HTTP权威》要再细看。
+4. Cache分为APC、File、Memcache 3种，文件实现简单干净。
+5. language表匹配HTTP头语言。
+6. tracking参数更新marketing表中clicks。
+7. Encryption 加密工具类。
+</code></pre>
+
+<h5>Document</h5>
+
+<h1>业务实体</h1>
+
+<pre><code>全部db操作、表大量text字段应对较大流量值得商榷。
+</code></pre>
+
+<h5>Customer</h5>
+
+<h5>Affiliate 联盟营销Affiliate Marketing</h5>
+
+<h5>Cart 购物车*****</h5>
+
+<h5>Tax</h5>
+
+<h5>Product 商品 ******</h5>
+
+<h5>Category 类目 ******</h5>
+
+<h5>Coupon 促销 ******</h5>
+
+<h5>Voucher 礼品劵 ***</h5>
+
+<h5>Order 订单 ******</h5>
+
+<h5>度量单位</h5>
+
+<pre><code>1. Currency和currency表
+2. Weight和 weight_class、weight_class_description表
+3. Length
+</code></pre>
+
+<h3>TODO</h3>
+
+<pre><code>1.redis cache加入(Predis)。
+2. ...
+</code></pre>
 </div>
 
 
@@ -114,21 +192,15 @@
   
 
 
-<time datetime="2014-06-15T10:04:02+08:00" pubdate data-updated="true">Jun 15<span>th</span>, 2014</time>
+<time datetime="2014-10-08T22:38:55+08:00" pubdate data-updated="true">Oct 8<span>th</span>, 2014</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/fun/'>fun</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://yunweiguya.github.io/blog/2014/06/15/shi-jie-bei/" data-via="" data-counturl="http://yunweiguya.github.io/blog/2014/06/15/shi-jie-bei/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://yunweiguya.github.io/blog/2014/10/08/opencartyuan-ma-qian-xi-2014-10-08/" data-via="" data-counturl="http://yunweiguya.github.io/blog/2014/10/08/opencartyuan-ma-qian-xi-2014-10-08/" >Tweet</a>
   
   
   
@@ -137,10 +209,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/06/05/ji-neng-shu/" title="Previous Post: 技能树">&laquo; 技能树</a>
+        <a class="basic-alignment left" href="/blog/2014/07/14/bu-qing-jian-zi-ji/" title="Previous Post: 不轻贱自己">&laquo; 不轻贱自己</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/07/08/sprinthui-gu/" title="Next Post: sprint回顾">sprint回顾 &raquo;</a>
       
     </p>
   </footer>
